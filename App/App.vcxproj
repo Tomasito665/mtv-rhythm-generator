@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{73A46CF5-51DF-432C-916C-D7D5F034E515}</ProjectGuid>
-    <RootNamespace>RhythmGeneratorApp</RootNamespace>
+    <ProjectGuid>{5D86FD16-ABFD-411D-8147-535118088886}</ProjectGuid>
+    <RootNamespace>App</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -81,7 +81,6 @@
       <AdditionalLibraryDirectories>$(CINDER_ROOT)\lib\msw\$(PlatformTarget);$(CINDER_ROOT)\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>cinder.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
-      <SubSystem>Windows</SubSystem>
     </Link>
     <ResourceCompile>
       <AdditionalIncludeDirectories>$(CINDER_ROOT)\include;$(ProjectDir)..\RhythmGeneratorLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -92,18 +91,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(CINDER_ROOT)\include;$(ProjectDir)..\RhythmGeneratorLib;$(ProjectDir)..\submodules\Cinder-poScene\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
-    <Link>
-      <AdditionalLibraryDirectories>$(CINDER_ROOT)\lib\msw\$(PlatformTarget);$(CINDER_ROOT)\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>cinder.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
-      <SubSystem>Windows</SubSystem>
-    </Link>
-    <ResourceCompile>
-      <AdditionalIncludeDirectories>$(CINDER_ROOT)\include;$(ProjectDir)..\RhythmGeneratorLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -132,33 +120,47 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="ControlBar.cpp" />
+    <ClCompile Include="KeyboardController.cpp" />
+    <ClCompile Include="MainViewController.cpp" />
+    <ClCompile Include="MultiSwitchOption.cpp" />
+    <ClCompile Include="ProgressBar.cpp" />
+    <ClCompile Include="RhythmPatternPlayer.cpp" />
+    <ClCompile Include="SequencerPad.cpp" />
+    <ClCompile Include="Sequencer.cpp" />
+    <ClCompile Include="TensionCanvas.cpp" />
+    <ClCompile Include="TensionLine.cpp" />
+    <ClCompile Include="TensionLineNode.cpp" />
+    <ClCompile Include="ToggleButton.cpp" />
+    <ClCompile Include="Utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.h" />
+    <ClInclude Include="ControlBar.h" />
+    <ClInclude Include="KeyboardController.h" />
+    <ClInclude Include="MultiSwitch.h" />
+    <ClInclude Include="MultiSwitchOption.h" />
+    <ClInclude Include="ProgressBar.h" />
+    <ClInclude Include="Resources.h" />
+    <ClInclude Include="RhythmPatternPlayer.h" />
+    <ClInclude Include="Theme.h" />
+    <ClInclude Include="MainViewController.h" />
+    <ClInclude Include="SequencerPad.h" />
+    <ClInclude Include="Sequencer.h" />
+    <ClInclude Include="TensionCanvas.h" />
+    <ClInclude Include="TensionLine.h" />
+    <ClInclude Include="TensionLineNode.h" />
+    <ClInclude Include="ToggleButton.h" />
+    <ClInclude Include="Utils.h" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Cinder-poScene\Cinder-poScene.vcxproj">
       <Project>{8924040d-856a-430b-8f25-34294faba981}</Project>
     </ProjectReference>
     <ProjectReference Include="..\RhythmGeneratorLib\RhythmGeneratorLib.vcxproj">
       <Project>{94493cb1-e956-487d-9335-660ef4f1a34d}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="KeyboardController.h" />
-    <ClInclude Include="ProgressBar.h" />
-    <ClInclude Include="MTVCanvas.h" />
-    <ClInclude Include="Resources.h" />
-    <ClInclude Include="RhythmGeneratorApp.h" />
-    <ClInclude Include="PatternPlayer.h" />
-    <ClInclude Include="Sequencer.h" />
-    <ClInclude Include="SequencerView.h" />
-    <ClInclude Include="ViewController.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="KeyboardController.cpp" />
-    <ClCompile Include="ProgressBar.cpp" />
-    <ClCompile Include="MTVCanvas.cpp" />
-    <ClCompile Include="RhythmGeneratorApp.cpp" />
-    <ClCompile Include="PatternPlayer.cpp" />
-    <ClCompile Include="Sequencer.cpp" />
-    <ClCompile Include="SequencerView.cpp" />
-    <ClCompile Include="ViewController.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources.rc" />

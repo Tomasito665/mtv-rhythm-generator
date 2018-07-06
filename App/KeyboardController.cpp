@@ -1,16 +1,16 @@
 #include "KeyboardController.h"
 
 
-KeyboardController::KeyboardController()
+rg::KeyboardController::KeyboardController()
 {
 }
 
 
-KeyboardController::~KeyboardController()
+rg::KeyboardController::~KeyboardController()
 {
 }
 
-void KeyboardController::keyDown(const KeyEvent& event)
+void rg::KeyboardController::keyDown(const KeyEvent& event)
 {
   const int code = event.getCode();
 
@@ -27,7 +27,7 @@ void KeyboardController::keyDown(const KeyEvent& event)
   }
 }
 
-void KeyboardController::keyUp(const KeyEvent& event)
+void rg::KeyboardController::keyUp(const KeyEvent& event)
 {
   const int code = event.getCode();
   if (mActiveKeys.find(code) != mActiveKeys.end()) {
@@ -35,12 +35,12 @@ void KeyboardController::keyUp(const KeyEvent& event)
   }
 }
 
-void KeyboardController::bind(int keyCode, OnKeyCallbackFunc callback)
+void rg::KeyboardController::bind(int keyCode, OnKeyCallbackFunc callback)
 {
   mCallbacks[keyCode] = callback;
 }
 
-void KeyboardController::unbind(int keyCode)
+void rg::KeyboardController::unbind(int keyCode)
 {
   if (mCallbacks.find(keyCode) != mCallbacks.end()) {
     mCallbacks.erase(keyCode);

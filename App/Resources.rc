@@ -1,0 +1,5 @@
+#include "Resources.h"
+
+RES_KICK_WAV
+RES_DOWN_CLICK_WAV
+RES_UP_CLICK_WAV

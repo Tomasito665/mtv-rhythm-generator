@@ -12,6 +12,7 @@
 #define MTV_RHYTHM_SPACE_RAND_SIGMA 0.0002
 
 
+
 class MTVRhythmSpace
 {
 public: 
@@ -31,9 +32,34 @@ public:
   int getPatternCount() const;  // returns the number of rhythms in this space
   int getDimensions() const;  // returns the number of dimensions
   PatternId getClosestPattern(const Tension * const mtv); // returns the pattern whose mtv is closest to the given point
-  PatternId getRandomPatternCloseTo(const Tension * const mtv);
+  PatternId getRandomPatternCloseTo(const Tension * const mtv, float distanceSD = 0.1f);
+  inline UnitRef getStepUnit() const { return mStepUnit; }
+  inline const TimeSignature& getTimeSignature() const { return mTs; }
+  float getDistance(const Tension * const mtvA, const Tension * const mtvB) const;
 
 protected:
+
+
+  struct DistanceCacheEntry
+  {
+    float distanceToTarget;
+    PatternId patternId;
+
+    friend bool operator<(const DistanceCacheEntry& lhs, const DistanceCacheEntry& rhs) {
+      if (lhs.distanceToTarget == rhs.distanceToTarget)
+        return lhs.patternId < rhs.patternId;
+      return lhs.distanceToTarget < rhs.distanceToTarget;
+    }
+
+    friend bool operator<(const DistanceCacheEntry& lhs, float rhs) {
+      return lhs.distanceToTarget < rhs;
+    }
+
+    friend bool operator<(float lhs, const DistanceCacheEntry& rhs) {
+      return lhs < rhs.distanceToTarget;
+    }
+  };
+
   void checkIfReady() const;
   void updateDistanceCache(const Tension * const mtv);
   bool equalsDistanceCacheTargetPoint(const Tension * const mtv) const;
@@ -46,8 +72,7 @@ private:
   const int mNPoints;  // order is important (must go after mNSteps)
   std::vector<Tension*> mPoints;
   std::mt19937 mRandom;
-  std::normal_distribution<double> mNormDist;  // order is import (must go after mNPoints)
-  typedef std::pair<float, PatternId> DistanceCacheEntry;
+  //typedef std::pair<float, PatternId> DistanceCacheEntry;
   std::vector<DistanceCacheEntry> mDistanceCache;
   Tension * mDistanceCacheTargetPoint;
 };

@@ -2,7 +2,6 @@
 #include <stdexcept>
 #include <assert.h>
 
-
 RhythmPattern::RhythmPattern(const TimeSignature& ts, UnitRef stepUnit, PatternId pattern) : 
   mTs(ts),
   mStepUnit(stepUnit),
@@ -14,6 +13,31 @@ RhythmPattern::RhythmPattern(const TimeSignature& ts, UnitRef stepUnit, PatternI
 }
 
 RhythmPattern::~RhythmPattern() { }
+
+PatternId RhythmPattern::vector2PatternId(std::vector<bool> patternVec)
+{
+  assert(patternVec.size() <= MAX_N_STEPS);
+  std::bitset<MAX_N_STEPS> bitset;
+  for (int i = 0; i < patternVec.size(); ++i)
+    bitset[i] = patternVec[i];
+  return (PatternId)bitset.to_ullong();
+}
+
+std::vector<bool> RhythmPattern::patternId2Vector(PatternId patternId, int nSteps)
+{
+  std::bitset<MAX_N_STEPS> bitset(patternId);
+  std::vector<bool> vector(nSteps);
+  patternId2Vector(patternId, vector.begin(), vector.end());
+  return vector;
+}
+
+void RhythmPattern::patternId2Vector(PatternId patternId, std::vector<bool>::iterator from, std::vector<bool>::iterator to)
+{
+  int stepIx = 0;
+  std::bitset<MAX_N_STEPS> patternBitset(patternId);
+  while (from != to)
+    *(from++) = patternBitset[stepIx++];
+}
 
 bool RhythmPattern::operator[](size_t index) const
 {
@@ -48,6 +72,11 @@ void RhythmPattern::toggle(size_t index)
 {
   checkStepIndex(index);
   mPattern.flip(index);
+}
+
+void RhythmPattern::setPatternId(PatternId pattern)
+{
+  mPattern = std::bitset<MAX_N_STEPS>(pattern);
 }
 
 std::vector<MusicalEvent> RhythmPattern::asMusicalEvents(bool cyclic, bool trimDurationsToBeat) const

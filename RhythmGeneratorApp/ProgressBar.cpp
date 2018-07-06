@@ -1,3 +1,6 @@
+#include "..\App\ProgressBar.h"
+#include "..\App\ProgressBar.h"
+#include "..\App\ProgressBar.h"
 #include "ProgressBar.h"
 #include <algorithm>
 #include <cinder/gl/gl.h>
@@ -32,7 +35,7 @@ void ProgressBar::update()
   const vec2 mainUL = mMainRect.getUpperLeft();
   const float mainWidth = mMainRect.getWidth();
   const float mainHeight = mMainRect.getHeight();
-  const float filledWidth = mainWidth * mProgress.load();
+  const float filledWidth = mainWidth * (float)mProgress.load();
   mFilledRect = Rectf(mainUL, mainUL + vec2(filledWidth, mainHeight));
 }
 
@@ -48,4 +51,9 @@ void ProgressBar::setProgress(double progress)
 {
   // clamp progress to [0, 1]
   mProgress.store(std::max(0.0, std::min(progress, 1.0)));
+}
+
+double rg::ProgressBar::getProgress()
+{
+  return mProgress.load();
 }

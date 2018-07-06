@@ -1,0 +1,3 @@
+[submodule "Cinder-poScene"]
+	path = submodules/Cinder-poScene
+	url = git://github.com/Potion/Cinder-poScene.git

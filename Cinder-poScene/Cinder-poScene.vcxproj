@@ -19,36 +19,37 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{73A46CF5-51DF-432C-916C-D7D5F034E515}</ProjectGuid>
-    <RootNamespace>RhythmGeneratorApp</RootNamespace>
+    <ProjectGuid>{8924040D-856A-430B-8F25-34294FABA981}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CinderpoScene</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -71,49 +72,46 @@
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(CINDER_ROOT)\include;$(ProjectDir)..\RhythmGeneratorLib;$(ProjectDir)..\submodules\Cinder-poScene\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(CINDER_ROOT)\include;$(ProjectDir)..\submodules\Cinder-poScene\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(CINDER_ROOT)\lib\msw\$(PlatformTarget);$(CINDER_ROOT)\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>cinder.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
       <SubSystem>Windows</SubSystem>
     </Link>
-    <ResourceCompile>
-      <AdditionalIncludeDirectories>$(CINDER_ROOT)\include;$(ProjectDir)..\RhythmGeneratorLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(CINDER_ROOT)\include;$(ProjectDir)..\RhythmGeneratorLib;$(ProjectDir)..\submodules\Cinder-poScene\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(CINDER_ROOT)\include;$(ProjectDir)..\submodules\Cinder-poScene\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(CINDER_ROOT)\lib\msw\$(PlatformTarget);$(CINDER_ROOT)\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>cinder.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
       <SubSystem>Windows</SubSystem>
     </Link>
-    <ResourceCompile>
-      <AdditionalIncludeDirectories>$(CINDER_ROOT)\include;$(ProjectDir)..\RhythmGeneratorLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
@@ -121,47 +119,51 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cinder-poScene\Cinder-poScene.vcxproj">
-      <Project>{8924040d-856a-430b-8f25-34294faba981}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\RhythmGeneratorLib\RhythmGeneratorLib.vcxproj">
-      <Project>{94493cb1-e956-487d-9335-660ef4f1a34d}</Project>
-    </ProjectReference>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="KeyboardController.h" />
-    <ClInclude Include="ProgressBar.h" />
-    <ClInclude Include="MTVCanvas.h" />
-    <ClInclude Include="Resources.h" />
-    <ClInclude Include="RhythmGeneratorApp.h" />
-    <ClInclude Include="PatternPlayer.h" />
-    <ClInclude Include="Sequencer.h" />
-    <ClInclude Include="SequencerView.h" />
-    <ClInclude Include="ViewController.h" />
+    <ClCompile Include="..\submodules\Cinder-poScene\src\poScene\_DragAndDrop.cpp" />
+    <ClCompile Include="..\submodules\Cinder-poScene\src\poScene\_DraggableView.cpp" />
+    <ClCompile Include="..\submodules\Cinder-poScene\src\poScene\_EventCenter.cpp" />
+    <ClCompile Include="..\submodules\Cinder-poScene\src\poScene\_Events.cpp" />
+    <ClCompile Include="..\submodules\Cinder-poScene\src\poScene\_ImageView.cpp" />
+    <ClCompile Include="..\submodules\Cinder-poScene\src\poScene\_MatrixSet.cpp" />
+    <ClCompile Include="..\submodules\Cinder-poScene\src\poScene\_Scene.cpp" />
+    <ClCompile Include="..\submodules\Cinder-poScene\src\poScene\_ShapeView.cpp" />
+    <ClCompile Include="..\submodules\Cinder-poScene\src\poScene\_TextView.cpp" />
+    <ClCompile Include="..\submodules\Cinder-poScene\src\poScene\_View.cpp" />
+    <ClCompile Include="..\submodules\Cinder-poScene\src\poScene\_ViewController.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="KeyboardController.cpp" />
-    <ClCompile Include="ProgressBar.cpp" />
-    <ClCompile Include="MTVCanvas.cpp" />
-    <ClCompile Include="RhythmGeneratorApp.cpp" />
-    <ClCompile Include="PatternPlayer.cpp" />
-    <ClCompile Include="Sequencer.cpp" />
-    <ClCompile Include="SequencerView.cpp" />
-    <ClCompile Include="ViewController.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Resources.rc" />
+    <ClInclude Include="..\submodules\Cinder-poScene\src\poScene\DragAndDrop.h" />
+    <ClInclude Include="..\submodules\Cinder-poScene\src\poScene\DraggableView.h" />
+    <ClInclude Include="..\submodules\Cinder-poScene\src\poScene\EventCenter.h" />
+    <ClInclude Include="..\submodules\Cinder-poScene\src\poScene\Events.h" />
+    <ClInclude Include="..\submodules\Cinder-poScene\src\poScene\ImageView.h" />
+    <ClInclude Include="..\submodules\Cinder-poScene\src\poScene\MatrixSet.h" />
+    <ClInclude Include="..\submodules\Cinder-poScene\src\poScene\Scene.h" />
+    <ClInclude Include="..\submodules\Cinder-poScene\src\poScene\ShapeView.h" />
+    <ClInclude Include="..\submodules\Cinder-poScene\src\poScene\TextureFit.h" />
+    <ClInclude Include="..\submodules\Cinder-poScene\src\poScene\TextView.h" />
+    <ClInclude Include="..\submodules\Cinder-poScene\src\poScene\VideoView.h" />
+    <ClInclude Include="..\submodules\Cinder-poScene\src\poScene\View.h" />
+    <ClInclude Include="..\submodules\Cinder-poScene\src\poScene\ViewController.h" />
+    <ClInclude Include="..\submodules\Cinder-poScene\src\poScene\ViewEvents.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

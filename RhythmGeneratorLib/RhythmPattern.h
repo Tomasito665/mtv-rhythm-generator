@@ -33,8 +33,9 @@ struct MusicalEvent
   }
 };
 
+class RhythmPattern;
 typedef std::vector<MusicalEvent> MusicalEventList;
-typedef std::weak_ptr<class RhythmPattern> RhythmPatternWeakRef;
+typedef std::shared_ptr<class RhythmPattern> RhythmPatternRef;
 
 // monophonic rhythm with a duration of one measure
 class RhythmPattern
@@ -42,11 +43,17 @@ class RhythmPattern
 public:
   explicit RhythmPattern(
     const TimeSignature& ts = TimeSignature(4, 4),
-    UnitRef stepUnit = Unit::QUAVER,
-    PatternId pattern = EMPTY_RHYTHM_PATTERN  // NOTE: LSB in pattern id represents first step
+    UnitRef stepUnit = Unit::QUAVER, 
+    PatternId pattern = EMPTY_RHYTHM_PATTERN  // NOTE: LSB in pattern id represents first step (so, pattern from right to left)
   );
-
   virtual ~RhythmPattern();
+
+  // converts the given binary pattern to a pattern id (vector must have a size less than MAX_N_STEPS)
+  static PatternId vector2PatternId(std::vector<bool> patternVec);
+  // converts the given pattern id to a binary vector
+  static std::vector<bool> patternId2Vector(PatternId patternId, int nSteps);
+  // fills the given vector with the binary representation of the given pattern
+  static void patternId2Vector(PatternId patternId, std::vector<bool>::iterator from, std::vector<bool>::iterator to);
 
   // clear all onsets
   void reset();
@@ -68,6 +75,8 @@ public:
   bool operator!=(const RhythmPattern &other) const;
   // toggles the given step (converts onset into non onset and vice-versa)
   void toggle(size_t index);
+  // sets the rhythm pattern given its id (LSB is first step)
+  void setPatternId(PatternId pattern);
   // returns rhythm pattern id for current onsets (this may change during the lifetime of this object)
   PatternId getPatternId() const;
   // converts this rhythm pattern to musical events (notes, rests and tied notes) and returns the events as a vector
