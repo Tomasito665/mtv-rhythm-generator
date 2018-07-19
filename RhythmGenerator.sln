@@ -5,11 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GTest", "GTest\GTest.vcxproj", "{E4EC5F3C-0D48-4F24-B8E2-780A4520AA84}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RhythmGeneratorTest", "RhythmGeneratorTest\RhythmGeneratorTest.vcxproj", "{09AAB5D5-9E52-4DCA-819C-62246FAA3408}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj", "{09AAB5D5-9E52-4DCA-819C-62246FAA3408}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RhythmGeneratorLib", "RhythmGeneratorLib\RhythmGeneratorLib.vcxproj", "{94493CB1-E956-487D-9335-660EF4F1A34D}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RhythmGeneratorApp", "RhythmGeneratorApp\RhythmGeneratorApp.vcxproj", "{73A46CF5-51DF-432C-916C-D7D5F034E515}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lib", "Lib\Lib.vcxproj", "{94493CB1-E956-487D-9335-660EF4F1A34D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GMock", "GMock\GMock.vcxproj", "{58373243-FEED-4134-813B-8C1666BF613F}"
 EndProject
@@ -49,14 +47,6 @@ Global
 		{94493CB1-E956-487D-9335-660EF4F1A34D}.Release|x64.Build.0 = Release|x64
 		{94493CB1-E956-487D-9335-660EF4F1A34D}.Release|x86.ActiveCfg = Release|Win32
 		{94493CB1-E956-487D-9335-660EF4F1A34D}.Release|x86.Build.0 = Release|Win32
-		{73A46CF5-51DF-432C-916C-D7D5F034E515}.Debug|x64.ActiveCfg = Debug|x64
-		{73A46CF5-51DF-432C-916C-D7D5F034E515}.Debug|x64.Build.0 = Debug|x64
-		{73A46CF5-51DF-432C-916C-D7D5F034E515}.Debug|x86.ActiveCfg = Debug|Win32
-		{73A46CF5-51DF-432C-916C-D7D5F034E515}.Debug|x86.Build.0 = Debug|Win32
-		{73A46CF5-51DF-432C-916C-D7D5F034E515}.Release|x64.ActiveCfg = Release|x64
-		{73A46CF5-51DF-432C-916C-D7D5F034E515}.Release|x64.Build.0 = Release|x64
-		{73A46CF5-51DF-432C-916C-D7D5F034E515}.Release|x86.ActiveCfg = Release|Win32
-		{73A46CF5-51DF-432C-916C-D7D5F034E515}.Release|x86.Build.0 = Release|Win32
 		{58373243-FEED-4134-813B-8C1666BF613F}.Debug|x64.ActiveCfg = Debug|x64
 		{58373243-FEED-4134-813B-8C1666BF613F}.Debug|x64.Build.0 = Debug|x64
 		{58373243-FEED-4134-813B-8C1666BF613F}.Debug|x86.ActiveCfg = Debug|Win32

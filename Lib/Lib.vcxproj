@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{94493CB1-E956-487D-9335-660EF4F1A34D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>RhythmGeneratorLib</RootNamespace>
+    <RootNamespace>Lib</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

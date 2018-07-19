@@ -61,7 +61,7 @@ void rg::ProgressBar::setTextColor(const ci::Color& color)
   mTextView->render();
 }
 
-const ci::Color& rg::ProgressBar::getTextColor() const
+ci::Color rg::ProgressBar::getTextColor() const
 {
   const ci::TextBox& textBox = mTextView->getCiTextBox();
   return textBox.getColor();

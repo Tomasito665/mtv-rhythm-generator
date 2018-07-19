@@ -165,7 +165,6 @@ inline void rg::MultiSwitch<T>::updateOptionViewPositions()
   float y = mTitleTextView->getBounds().getCenter().y;
   ci::vec2 prevObjPos = mTitleTextView->getPosition() + ci::vec2(mTitleMargin, 0.0f);
   ci::vec2 prevObjSize = mTitleTextView->getSize();
-  ci::Rectf container();
 
   for (Option& opt : mOptions) {
     po::scene::ViewRef view = opt.view;

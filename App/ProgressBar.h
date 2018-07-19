@@ -4,7 +4,7 @@
 #include <poScene/View.h>
 #include <poScene/TextView.h>
 
-#define RG_PROG_BAR_TEXT_RATIO 0.85
+#define RG_PROG_BAR_TEXT_RATIO 0.85f
 
 namespace rg {
   typedef std::shared_ptr<class ProgressBar> ProgressBarRef;
@@ -25,7 +25,7 @@ namespace rg {
     inline double getProgress() { return mProgress; }
 
     void setTextColor(const ci::Color& color);
-    const ci::Color& getTextColor() const;
+    ci::Color getTextColor() const;
 
     void setSize(ci::vec2 size) override;
 

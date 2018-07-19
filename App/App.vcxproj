@@ -74,7 +74,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(CINDER_ROOT)\include;$(ProjectDir)..\RhythmGeneratorLib;$(ProjectDir)..\submodules\Cinder-poScene\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(CINDER_ROOT)\include;$(ProjectDir)..\Lib;$(ProjectDir)..\submodules\Cinder-poScene\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -83,7 +83,7 @@
       <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(CINDER_ROOT)\include;$(ProjectDir)..\RhythmGeneratorLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(CINDER_ROOT)\include;$(ProjectDir)..\Lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -158,7 +158,7 @@
     <ProjectReference Include="..\Cinder-poScene\Cinder-poScene.vcxproj">
       <Project>{8924040d-856a-430b-8f25-34294faba981}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\RhythmGeneratorLib\RhythmGeneratorLib.vcxproj">
+    <ProjectReference Include="..\Lib\Lib.vcxproj">
       <Project>{94493cb1-e956-487d-9335-660ef4f1a34d}</Project>
     </ProjectReference>
   </ItemGroup>
